@@ -1,69 +1,95 @@
-
-.todo-container{
+/* Basic Layout and Styling */
+#app {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid black;
-    width:fit-content;
-    padding:15px;
-    width: 400px;
-    min-height: 400px;
-}
-
-#app{
-    display:flex;
     justify-content: center;
     height: 100vh;
     align-items: center;
-}
-.todo-input{
-    padding: 3px 12px;
-    border-radius: 50px;
-    border: 1px solid black;
-    margin-bottom: 10px;
-
+    background-color: #f4f4f9; /* Soft background color */
 }
 
-.todo-ul{
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #005f73; /* Pleasant blue border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow for 3D effect */
+    width: 400px;
+    min-height: 400px;
+    padding: 20px;
+    background: white;
+    transition: transform 0.2s ease; /* Smooth transform on hover */
+}
+
+.todo-container:hover {
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+/* Input Styling */
+.todo-input {
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 2px solid #00b4d8; /* Brighter border for input */
+    outline: none;
+    transition: all 0.3s ease;
+    width: calc(100% - 30px); /* Full-width minus padding */
+}
+
+.todo-input:focus {
+    border-color: #0077b6; /* Darker on focus */
+    box-shadow: 0 0 8px #00b4d8; /* Subtle glow */
+}
+
+/* Todo List Styling */
+.todo-ul {
     list-style-type: none;
-    width:100%;
-    padding:0;
+    width: 100%;
+    padding: 0;
+    overflow-y: auto; /* Enables scrolling */
+    max-height: 300px; /* Fixed height with scrolling */
 }
 
 .todo-item {
-    width:100%;
-    display: flex;
-    margin-block:2px;
-}
-
-.todo-checkbox{
-    margin-right: 5px;
-}
-
-.todo-delete-item{
-    margin-left: auto;
-    background: transparent;
-    border:none;
-}
-.todo-label{
-    margin-bottom: 0;
-}
-
-.todo-footer{
-    margin-top:auto;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    padding: 8px;
+    transition: background-color 0.2s;
+}
+
+.todo-item:hover {
+    background-color: #e0f4f1; /* Highlight item on hover */
+}
+
+/* Checkbox and Label Styling */
+.todo-checkbox {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.todo-label {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+/* Button Styling */
+.todo-delete-item, .todo-undo-button, .todo-clearall-button {
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 2px;
+    background-color: transparent;
+    border: none;
+    color: #0077b6;
+    transition: color 0.2s ease;
+}
+
+.todo-delete-item:hover, .todo-undo-button:hover, .todo-clearall-button:hover {
+    color: #023e8a; /* Darker color on hover */
+}
+
+.todo-footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-
-}
-.todo-items-lef{
-    margin-bottom: 0;
-}
-
-.todo-undo-button, .todo-clearall-button{
-background-color: transparent;
-border-radius: 50px;
-border:1px solid black;
-padding: 8px 16px;
 }
